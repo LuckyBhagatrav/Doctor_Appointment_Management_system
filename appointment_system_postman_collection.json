@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "48f1078e-3d59-4a9e-bf65-7e4e5eea6efd",
+		"name": "appointment_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37702638"
+	},
+	"item": [
+		{
+			"name": "create_time_slot_doctors",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "AUTH_TOKEN",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0aW1lc3RhbXAiOiIyMDI0LTEyLTI3IDEyOjM3OjM1ICswNTMwIiwiZW1haWwiOiJkb2N0b3IyQHlvcG1haWwuY29tIn0.2qCzbXl7HCHI5U3sCmT8fU_tarzDjH394zjlyXYeOkw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"time_slot\": {\n    \"start_time\": \"10:00\",\n    \"end_time\": \"03:00\",\n    \"for_date\": \"2024-12-30\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local}}/api/time_slots"
+			},
+			"response": []
+		},
+		{
+			"name": "list _time_slot",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "AUTH_TOKEN",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0aW1lc3RhbXAiOiIyMDI0LTEyLTI3IDEyOjM3OjM2ICswNTMwIiwiZW1haWwiOiJwYXRpZW50MkB5b3BtYWlsLmNvbSJ9.ms1SSo8hpZ5DpzIjf9dEZnHzZDI0CZNaTkQBbG7CPxM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{local}}/api/time_slots",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"time_slots"
+					],
+					"query": [
+						{
+							"key": "doctor_name",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_appointment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "AUTH_TOKEN",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0aW1lc3RhbXAiOiIyMDI0LTEyLTI3IDEyOjM3OjM2ICswNTMwIiwiZW1haWwiOiJwYXRpZW50MkB5b3BtYWlsLmNvbSJ9.ms1SSo8hpZ5DpzIjf9dEZnHzZDI0CZNaTkQBbG7CPxM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"appointment\": {\n    \"doctor_id\": 2,\n    \"time_slot_id\": 10,\n    \"start_time\": \"10:00\",\n    \"end_time\": \"03:00\",\n    \"for_date\": \"2024-12-29\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local}}/api/appointments"
+			},
+			"response": []
+		},
+		{
+			"name": "list_all_appointments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "AUTH_TOKEN",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0aW1lc3RhbXAiOiIyMDI0LTEyLTI3IDEyOjM3OjM2ICswNTMwIiwiZW1haWwiOiJwYXRpZW50MkB5b3BtYWlsLmNvbSJ9.ms1SSo8hpZ5DpzIjf9dEZnHzZDI0CZNaTkQBbG7CPxM",
+						"type": "text"
+					}
+				],
+				"url": "{{local}}/api/appointments"
+			},
+			"response": []
+		}
+	]
+}
