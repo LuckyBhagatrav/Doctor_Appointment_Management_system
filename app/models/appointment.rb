@@ -20,7 +20,6 @@ class Appointment < ApplicationRecord
   end
 
   def for_date_must_match_start_time_date
-  	byebug
     if for_date.present? && time_slot.present? && for_date != time_slot.for_date.to_date
       errors.add(:for_date, "must be the same as the start time's date")
     end
@@ -43,7 +42,6 @@ class Appointment < ApplicationRecord
 
   def appointment_time_within_doctor_availability
     if time_slot.present?
-      # Check if the start and end time of the appointment are within the doctor's available time slot
       unless start_time >= time_slot.start_time && end_time <= time_slot.end_time
         errors.add(:base, "Appointment time must be within the doctor's available time slot.")
       end

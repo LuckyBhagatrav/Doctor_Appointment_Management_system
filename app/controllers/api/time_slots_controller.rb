@@ -24,10 +24,7 @@ module Api
                    else
                      TimeSlot.all.includes(:doctor)
                    end
-      current_date = Date.today
-      today_slots = time_slots.select { |slot| slot&.for_date == current_date }
-      future_slots = time_slots.select { |slot| slot&.for_date > current_date }
-      response = today_slots.map do |slot|
+      response = time_slots.map do |slot|
         {
           doctor: "#{slot.doctor.first_name} #{slot.doctor.last_name}",
           time_slot: {
@@ -35,20 +32,6 @@ module Api
             end_time: slot.end_time,
             for_date: slot.for_date
           }
-        }
-      end
-      if future_slots.any?
-        response << {
-          next_available_slot: future_slots.map do |slot|
-            {
-              doctor: "#{slot.doctor.first_name} #{slot.doctor.last_name}",
-              time_slot: {
-                start_time: slot.start_time,
-                end_time: slot.end_time,
-                for_date: slot.for_date
-              }
-            }
-          end
         }
       end
       render json: response
