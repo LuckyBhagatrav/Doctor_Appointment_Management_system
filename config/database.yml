@@ -1,0 +1,36 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: practical_dev
+  username: ravi
+  password: anupbhagat
+  host: localhost
+  # url: postgres://chris:root@18.132.163.19:5432/testdb
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  pool: 5t
+  database: practical_test
+  username: ravi
+  password: anupbhagat
+  host: localhost
+
+staging:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: ravi
+  password: anupbhagat
+  database: practical_staging
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: ravi
+  password: anupbhagat
+  database: practical_prod
+  host: localhost

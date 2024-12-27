@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  for_date: 2022-05-08
+  start_time: 2022-05-08 12:32:11
+  end_time: 2022-05-08 12:32:11
+  doctor_id: 1
+
+two:
+  for_date: 2022-05-08
+  start_time: 2022-05-08 12:32:11
+  end_time: 2022-05-08 12:32:11
+  doctor_id: 1

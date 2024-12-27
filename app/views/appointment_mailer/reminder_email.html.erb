@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Appointment Reminder</h1>
+    <p>Dear <%= @patient.first_name %> <%= @patient.last_name %>,</p>
+    <p>This is a reminder that you have an appointment with Dr. <%= @doctor.first_name %> <%= @doctor.last_name %> on <%= @appointment.start_time.strftime("%B %d, %Y at %I:%M %p") %>.</p>
+    <p>Please make sure to be on time.</p>
+    <p>Thank you,</p>
+    <p>Your Medical Team</p>
+  </body>
+</html>
